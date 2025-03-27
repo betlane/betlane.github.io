@@ -283,6 +283,38 @@ body {
   margin: 10px 0 0;
 }
 
+/* Fake Menu Icons */
+.menu-icons {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-icon {
+  height: 40px;
+}
+
+.profile-icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-color);
+}
+
+.wallet-btn {
+  background-color: var(--accent-color);
+  color: black;
+  font-weight: 600;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 20px;
+  cursor: default;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+}
+
 /* Responsive */
 @media (max-width: 480px) {
   .header h1 {
@@ -315,6 +347,22 @@ body {
   }
 
   .counter-row {
+    flex-direction: column;
+    align-items: center;
     gap: 8px;
+  }
+
+  .wallet-btn {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+  }
+
+  .profile-icon {
+    height: 34px;
+  }
+
+  .profile-icon img {
+    width: 34px;
+    height: 34px;
   }
 }
