@@ -2,6 +2,7 @@
 
 // Canvas & context
 var canvas = document.getElementById('wheelCanvas');
+var wheelcontainer = document.getElementsByClassName('wheel-container');
 var ctx = canvas.getContext('2d');
 
 // Track total winnings
@@ -17,7 +18,7 @@ var names = [
   "-100","200",
   "-200","250",
   "-300","1000",
-  "-500","0"
+  "-500","Zero"
 ];
 
 // Rigging: first 3 spins = 100, -50, 250
@@ -51,13 +52,14 @@ canvas.addEventListener('click', spin);
    spin(): Called when user clicks the canvas
    ----------------------------------------------------------------*/
 function spin() {
+  // If currently spinning, ignore further clicks
+  if (isSpinning) {
+    return;
+  }
+
   // If no spins left, show a modal
   if (spinsLeft <= 0) {
     showModal("NO MORE SPINS!", "❌", "You have no more spins left!", null);
-    return;
-  }
-  // If currently spinning, ignore further clicks
-  if (isSpinning) {
     return;
   }
 
@@ -225,17 +227,19 @@ function updateWinnings(amount) {
    function setCanvasSize() {
     var containerWidth = canvas.parentElement.clientWidth;
     var containerHeight = window.innerHeight;
-  
-    var size;
-  
-    if (window.innerWidth < 480) {
-      size = Math.min(containerWidth, containerHeight * 0.45);
-    } else {
-      size = Math.min(containerWidth * 0.9, containerHeight * 0.5);
-    }
-  
+    var size = Math.min(containerWidth * 0.9, containerHeight * 0.5);
     canvas.width = size;
     canvas.height = size;
+
+    var ContainerSize;
+  
+    if (window.innerWidth < 480) {
+      ContainerSize = Math.min(containerWidth * 0.9, containerHeight * 0.5);
+    } else {
+      ContainerSize = Math.min(containerWidth * 0.9, containerHeight * 0.5);
+    }
+    wheelcontainer.width = ContainerSize;
+    wheelcontainer.height = ContainerSize;    
   }
 
 /* --------------------------------

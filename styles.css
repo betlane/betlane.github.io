@@ -85,8 +85,8 @@ body {
   justify-content: center;
   flex: 1;
   width: var(--container-width);
-  max-width: var(--max-width);
   margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 /* Wheel Container */
@@ -100,7 +100,7 @@ body {
 .counter-row {
   display: flex;
   gap: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .money-counter,
@@ -305,7 +305,7 @@ body {
 
   .money-counter,
   .spins-left-counter {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .wheel-frame-container {
@@ -314,13 +314,7 @@ body {
     aspect-ratio: 1 / 1;
   }
 
-  #wheelCanvas {
-    width: 100% !important;
-    height: auto !important;
-  }
-
   .counter-row {
-    flex-direction: column;
     gap: 8px;
   }
 }
