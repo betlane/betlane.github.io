@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BetLane - Rigged Wheel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo-placeholder">
+      <img src="logo.png" alt="BetLane Logo Placeholder">
+    </div>
+    <h1>BetLane</h1>
+  </header>
+
+  <!-- Tagline Section -->
+  <section class="tagline-section">
+    <h2>Spin &amp; Win</h2>
+    <p>Test your luck for amazing rewards!</p>
+  </section>
+
+  <!-- Money-bills container (behind main content) -->
+  <div id="confetti-container"></div>
+
+  <!-- Main content container -->
+  <div class="container">
+    <div class="wheel-container">
+
+      <!-- Money Counter & Spin Counter -->
+      <div class="counter-row">
+        <div class="money-counter">
+          <span id="totalWonLabel">Total Winnings: R0</span>
+        </div>
+        <div class="spins-left-counter">
+          <span id="spinsLeftLabel">Spins Left: 3</span>
+        </div>
+      </div>
+
+      <!-- Frame + Canvas + Light Rays -->
+      <div class="wheel-frame-container">
+        <div class="light-rays" id="lightRays"></div> <!-- Light rays behind wheel -->
+        <img src="frame.png" alt="Wheel Frame" class="wheel-frame-image">
+        <canvas id="wheelCanvas" width="500" height="500"></canvas>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal for post-spin message -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h2 id="modal-header"></h2>
+      <div id="modal-emoji" class="modal-emoji"></div>
+      <div id="modal-result" class="modal-result"></div>
+    </div>
+  </div>
+
+  <script src="wheel.js"></script>
+</body>
+</html>
