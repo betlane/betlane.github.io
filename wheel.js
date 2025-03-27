@@ -222,13 +222,21 @@ function updateWinnings(amount) {
 /* --------------------------------
    setCanvasSize()
    --------------------------------*/
-function setCanvasSize() {
-  var containerWidth = canvas.parentElement.clientWidth;
-  var containerHeight = window.innerHeight;
-  var size = Math.min(containerWidth * 0.9, containerHeight * 0.5);
-  canvas.width = size;
-  canvas.height = size;
-}
+   function setCanvasSize() {
+    var containerWidth = canvas.parentElement.clientWidth;
+    var containerHeight = window.innerHeight;
+  
+    var size;
+  
+    if (window.innerWidth < 480) {
+      size = Math.min(containerWidth, containerHeight * 0.45);
+    } else {
+      size = Math.min(containerWidth * 0.9, containerHeight * 0.5);
+    }
+  
+    canvas.width = size;
+    canvas.height = size;
+  }
 
 /* --------------------------------
    drawWheel()
